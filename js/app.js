@@ -15,7 +15,8 @@ let zSpacing = -1000,
 
  lastPos = top
  
- frames.forEach(fucntion(n, i) {
-  zVals.
+ frames.forEach(function(n, i) {
+  zVals.push((i * zSpacing) + zSpacing)
+  zVals[i] += delta * -5
  })
  }
