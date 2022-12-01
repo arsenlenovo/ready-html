@@ -1,15 +1,15 @@
 // 3D scroll
 
 let zSpacing = -1000,
- lastPos = zPacing / 5
+ lastPos = zSpacing / 5
  $frames = document.getElementsByClassName('frame'),
- frame = Array.from($frames), 
+ frames = Array.from($frames), 
  zVals = []
 
 
 
 
- window.onscroll = fucntion() {
+ window.onscroll = function() {
  let top = document.documentElement.scrollTop,
      delta = lastPos - top
 
@@ -18,5 +18,8 @@ let zSpacing = -1000,
  frames.forEach(function(n, i) {
   zVals.push((i * zSpacing) + zSpacing)
   zVals[i] += delta * -5
+  let frame = frames[i],
+    transform = `translatez(${zVals[i]}px)`
+  frame.setAttribute('style', `transform: ${transform}`)
  })
  }
